@@ -5,7 +5,7 @@ import Projects from "./components/Projects";
 
 export default function Home() {
     return (
-        <main className="flex flex-col gap-12 ">
+        <main className="flex flex-col">
             <Hero />
             <AboutMe />
             <Projects />
