@@ -24,7 +24,7 @@ export default function Hero() {
                 .join("");
 
             if (tilteRef.current.length === Math.floor(iteration)) {
-                if (count === 2) {
+                if (count === titles.length - 1) {
                     setCount(0);
                 } else {
                     setCount(count + 1);
@@ -40,7 +40,7 @@ export default function Hero() {
     }, [count]);
 
     return (
-        <section className="flex  justify-center  items-center container mx-auto h-[14rem] bg-black lg:h-[25rem] ">
+        <section className="flex  justify-center  items-center w-screen mx-auto h-[14rem] bg-black lg:h-[25rem] ">
             <article className="text-white font-extrabold flex flex-col gap-2 lg:mr-[10rem] ">
                 <div className="flex flex-col">
                     <h2 className="text-xs lg:text-2xl">

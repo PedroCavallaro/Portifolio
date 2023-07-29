@@ -8,7 +8,7 @@ export default function Iconst() {
             <Link
                 href={"https://www.github.com/PedroCavallaro"}
                 target="_blank"
-                className="hover:text-zinc-600 transition-all"
+                className="hover:text-zinc-600 transition-all hover:scale-110"
                 referrerPolicy="no-referrer"
             >
                 <GrGithub size={30} />
@@ -16,14 +16,14 @@ export default function Iconst() {
             <Link
                 target="_blank"
                 referrerPolicy="no-referrer"
-                className="hover:text-zinc-600 transition-all"
+                className="hover:text-zinc-600 transition-all hover:scale-110"
                 href={"https://www.linkedin.com/in/pedro-cavallaro/"}
             >
                 <GrLinkedin size={30} />
             </Link>
             <a
                 href="/CV_Pedro_Cavallaro.pdf"
-                className="hover:text-zinc-600 transition-all"
+                className="hover:text-zinc-600 transition-all hover:scale-110"
                 download={"CV-Pedro-Cavallaro"}
             >
                 <HiOutlineDocumentText size={30} />
