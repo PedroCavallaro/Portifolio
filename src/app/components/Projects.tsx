@@ -3,20 +3,23 @@ import ProjectCard from "./ProjectCard";
 const projects = [
     {
         name: "Code life Blog",
-        image: "Code-life.png",
         link: "https://code-life-blog.vercel.app",
+        imageMobile: "codeLifeMobile.png",
+        imageDesktop: "codeLifeDesktop.png",
         isDeployed: true,
     },
     {
         name: "Game Store",
-        image: "Code-life.png",
+        imageMobile: "codeLifeMobile.png",
+        imageDesktop: "asdasdd",
         link: "https://code-life-blog.vercel.app",
         isDeployed: false,
     },
     {
         name: "Ma reserve",
-        image: "Code-life.png",
         link: "https://code-life-blog.vercel.app",
+        imageMobile: "Code-life.png",
+        imageDesktop: "asdasdd",
         isDeployed: false,
     },
 ];
@@ -28,7 +31,8 @@ export default function Projects() {
                 {projects.map((project, index) => {
                     return (
                         <ProjectCard
-                            image={project.image}
+                            imageDestktop={project.imageDesktop}
+                            imageMobile={project.imageMobile}
                             link={project.link}
                             name={project.name}
                             isDeployed={project.isDeployed}

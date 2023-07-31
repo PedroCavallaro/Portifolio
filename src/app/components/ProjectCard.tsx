@@ -7,14 +7,16 @@ import Image from "next/image";
 interface ProjectCardProps {
     name: string;
     link: string;
-    image: string;
+    imageMobile: string;
+    imageDestktop: string;
     isDeployed: boolean;
 }
 
 export default function ProjectCard({
     name,
     link,
-    image,
+    imageMobile,
+    imageDestktop,
     isDeployed,
 }: ProjectCardProps) {
     function handleButtonClick() {
@@ -25,8 +27,15 @@ export default function ProjectCard({
         <div className="flex justify-center items-center flex-col skew-x-[20deg] lg:skew-x-[30deg]">
             <div className="bg-gray-800 w-[6rem] h-[8rem] lg:w-[20rem] lg:h-[12rem] relative overflow-hidden rounded-sm group  ">
                 <Image
-                    src={`/${image}`}
-                    className="w-full h-full object-cover"
+                    src={`/assets/${imageMobile}`}
+                    className="object-center object-cover flex lg:hidden"
+                    alt={name}
+                    width={400}
+                    height={400}
+                />
+                <Image
+                    src={`/assets/${imageDestktop}`}
+                    className="w-full hidden lg:flex h-full object-cover"
                     alt={name}
                     width={400}
                     height={400}
