@@ -28,14 +28,14 @@ export default function ProjectCard({
             <div className="bg-gray-800 w-[6rem] h-[8rem] lg:w-[25rem] lg:h-[15rem] relative overflow-hidden rounded-sm group  ">
                 <Image
                     src={`/assets/${imageMobile}`}
-                    className="object-center object-cover flex lg:hidden"
+                    className="object-center object-cover flex lg:hidden rounded-md"
                     alt={name}
                     width={1000}
                     height={1000}
                 />
                 <Image
                     src={`/assets/${imageDestktop}`}
-                    className="w-full hidden lg:flex h-full object-cover"
+                    className="w-full hidden lg:flex h-full object-cover rounded-md"
                     alt={name}
                     width={1000}
                     height={1000}

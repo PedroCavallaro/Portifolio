@@ -26,11 +26,11 @@ export const experienceArray = [
     {
         company: "Cross Conection",
         role: "Suporte Técnico",
-        highlights: ["a", "a", "a"],
+        highlights: ["Redes", "Solução de problemas", "Comunicação"],
     },
     {
         company: "Freelancer",
         role: "Desenvolvedor FullStack",
-        highlights: ["a", "a", "a"],
+        highlights: ["Interfaces responsivas", "CRUD", "Criação de APIs"],
     },
 ];
