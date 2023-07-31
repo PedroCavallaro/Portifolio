@@ -2,11 +2,11 @@
 import { useEffect, useRef, useState } from "react";
 import Icons from "./Hero/Icons";
 
-const titles = ["Fullstack", "React", "Node.js"];
 export default function Hero() {
     const [count, setCount] = useState<number>(0);
     const [title, setTitle] = useState<string>("Fullstack");
 
+    const titles = ["Fullstack", "React", "Node.js"];
     const tilteRef = useRef<string>(title);
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 

@@ -7,6 +7,18 @@ const projects = [
         link: "https://code-life-blog.vercel.app",
         isDeployed: true,
     },
+    {
+        name: "Game Store",
+        image: "Code-life.png",
+        link: "https://code-life-blog.vercel.app",
+        isDeployed: false,
+    },
+    {
+        name: "Ma reserve",
+        image: "Code-life.png",
+        link: "https://code-life-blog.vercel.app",
+        isDeployed: false,
+    },
 ];
 
 export default function Projects() {

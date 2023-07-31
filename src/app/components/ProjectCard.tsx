@@ -10,7 +10,7 @@ interface ProjectCardProps {
     image: string;
     isDeployed: boolean;
 }
-//
+
 export default function ProjectCard({
     name,
     link,
@@ -33,7 +33,7 @@ export default function ProjectCard({
                 />
                 <div
                     data-isopen={isTextOpen}
-                    className="h-full w-full absolute bg-zinc-400 -bottom-64 data-[isopen=true]:bottom-0 transition-all lg:group-hover:bottom-0"
+                    className="h-full w-full absolute bg-white -bottom-64 data-[isopen=true]:bottom-0 transition-all lg:group-hover:bottom-0"
                 >
                     <p className="text-black text-xs px-2 mt-2 leading-relaxed select-none block">
                         Pequno blog criado com Next, React Node
@@ -42,14 +42,14 @@ export default function ProjectCard({
                             target="_blank"
                             referrerPolicy="no-referrer"
                             href={link}
-                            className="underline hover:text-white transition-all"
+                            className="underline hover:text-zinc-900 transition-all"
                         >
                             {isDeployed ? "Visitar >" : "Ver mais >"}
                         </Link>
                     </p>
                 </div>
 
-                <div className="text-white absolute -bottom-0 flex items-center justify-center w-full z-50 lg:hidden ">
+                <div className="text-black absolute -bottom-0 flex items-center justify-center w-full z-50 lg:hidden ">
                     {isTextOpen ? (
                         <button onClick={handleButtonClick}>
                             <AiOutlineClose />
@@ -61,7 +61,7 @@ export default function ProjectCard({
                     )}
                 </div>
             </div>
-            <p className="text-white text-xs text-center relative mt-2 flex lg:text-lg">
+            <p className="text-white text-xs text-center mt-2  flex lg:text-lg">
                 {name}
             </p>
         </div>
