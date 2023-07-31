@@ -25,20 +25,20 @@ export default function ProjectCard({
     const [isTextOpen, setIsTextOpen] = useState<boolean>(false);
     return (
         <div className="flex justify-center items-center flex-col skew-x-[20deg] lg:skew-x-[30deg]">
-            <div className="bg-gray-800 w-[6rem] h-[8rem] lg:w-[20rem] lg:h-[12rem] relative overflow-hidden rounded-sm group  ">
+            <div className="bg-gray-800 w-[6rem] h-[8rem] lg:w-[25rem] lg:h-[15rem] relative overflow-hidden rounded-sm group  ">
                 <Image
                     src={`/assets/${imageMobile}`}
                     className="object-center object-cover flex lg:hidden"
                     alt={name}
-                    width={400}
-                    height={400}
+                    width={1000}
+                    height={1000}
                 />
                 <Image
                     src={`/assets/${imageDestktop}`}
                     className="w-full hidden lg:flex h-full object-cover"
                     alt={name}
-                    width={400}
-                    height={400}
+                    width={1000}
+                    height={1000}
                 />
                 <div
                     data-isopen={isTextOpen}
@@ -53,7 +53,7 @@ export default function ProjectCard({
                             href={link}
                             className="underline hover:text-zinc-900 transition-all"
                         >
-                            {isDeployed ? "Visitar >" : "Ver mais >"}
+                            {isDeployed ? "Visitar " : "Ver mais "}
                         </Link>
                     </p>
                 </div>

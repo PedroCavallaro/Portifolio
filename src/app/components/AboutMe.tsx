@@ -1,5 +1,5 @@
 import EmailButton from "./AboutMe/EmailButton";
-import Model from "./Model";
+import Model from "./AboutMe/Model";
 
 export default function AboutMe() {
     return (
