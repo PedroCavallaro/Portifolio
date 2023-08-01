@@ -8,7 +8,7 @@ export const projects = [
     },
     {
         name: "Game Store",
-        imageMobile: "codeLifeMobile.png",
+        imageMobile: "gameStoreMobile.png",
         imageDesktop: "GameStoreDesktop.png",
         link: "https://github.com/PedroCavallaro/Theboys-games-store",
         isDeployed: false,
@@ -16,7 +16,7 @@ export const projects = [
     {
         name: "Ma reserve",
         link: "https://code-life-blog.vercel.app",
-        imageMobile: "Code-life.png",
+        imageMobile: "maReserveMobile.png",
         imageDesktop: "asdasdd",
         isDeployed: false,
     },
