@@ -31,6 +31,10 @@ export const experienceArray = [
     {
         company: "Freelancer",
         role: "Desenvolvedor FullStack",
-        highlights: ["Interfaces responsivas", "CRUD", "Criação de APIs"],
+        highlights: [
+            "Interfaces responsivas",
+            "Modelagem de banco de dados",
+            "Criação de APIs",
+        ],
     },
 ];
