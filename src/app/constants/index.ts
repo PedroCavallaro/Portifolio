@@ -37,4 +37,4 @@ export const experienceArray = [
             "Criação de APIs",
         ],
     },
-] as const;
+];
