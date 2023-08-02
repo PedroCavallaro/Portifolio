@@ -6,7 +6,7 @@ export default function Experience() {
         <div className="flex flex-col mt-10 gap-2">
             <div className="flex gap-2 items-center justify-center">
                 <div className=" h-[0.10rem] bg-zinc-600 w-full"></div>
-                <h1 className="text-lg font-bold leading-normal text-left ">
+                <h1 className=" font-bold leading-normal text-left ">
                     Experiências
                 </h1>
                 <div className=" h-[0.10rem] bg-zinc-600 w-full"></div>

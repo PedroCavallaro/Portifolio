@@ -13,10 +13,14 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
     ) => {
         return (
             <div className="flex flex-col gap-1 text-xs">
-                <label htmlFor="">{label}</label>
+                <label htmlFor="" className="lg:text-md">
+                    {label}
+                </label>
                 <input
                     ref={ref}
-                    className={twMerge(`w-32 text-black ${className}`)}
+                    className={twMerge(
+                        `w-32 h-5 p-1 lg:w-[20rem] lg:h-[2rem] lg:text-md rounded-sm text-black ${className}`
+                    )}
                     {...props}
                 />
                 {erros && <span>{erros}</span>}
