@@ -3,7 +3,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import Input from "../Input";
 import { AiOutlineCheckCircle } from "react-icons/ai";
-import { useState } from "react";
+import { useEffect, useReducer, useState } from "react";
+import { INIT_STATE, emailReducer } from "@/app/reducers";
+import { CgSpinner } from "react-icons/cg";
+import { swal } from "@/app/lib/swall";
 
 const schema = z.object({
     name: z.string().min(3, "Minimo 3 caractéres"),
@@ -18,6 +21,7 @@ type ResponseItems = {
 
 export default function EmailForm() {
     async function submit({ name, subject, text }: FormData) {
+        dispatch({ type: 0 });
         await fetch(
             `http://localhost:3000/api?name=${name}&subject=${subject}&text=${text}`,
             {
@@ -27,13 +31,12 @@ export default function EmailForm() {
             .then((res) => res.json())
             .then((data: ResponseItems) => {
                 if (data.hasPassed) {
-                    handleEmail(true);
+                    dispatch({ type: 2 });
                 }
-            });
+            })
+            .catch((err) => dispatch({ type: 1 }));
     }
-    function handleEmail(condition: boolean) {
-        setSucces(condition);
-    }
+
     const {
         register,
         handleSubmit,
@@ -43,7 +46,20 @@ export default function EmailForm() {
         mode: "onBlur",
         resolver: zodResolver(schema),
     });
-    const [succes, setSucces] = useState(false);
+    const [emailState, dispatch] = useReducer(emailReducer, INIT_STATE);
+
+    useEffect(() => {
+        if (emailState.success) {
+            swal.fire();
+        }
+        const timeout = setTimeout(() => {
+            dispatch({ type: 3 });
+        }, 5000);
+
+        return () => {
+            clearTimeout(timeout);
+        };
+    }, [emailState.success]);
     return (
         <form
             onSubmit={handleSubmit((data) => {
@@ -87,10 +103,16 @@ export default function EmailForm() {
             </div>
             <button
                 className={`bg-black ${
-                    succes && "bg-emerald-500 "
+                    emailState.success && "bg-emerald-500 "
                 } hover:bg-emerald-500 transition-all text-white relative flex items-center justify-center  rounded-lg -top-4 text-xs p-1 lg:h-[2rem] lg:text-md`}
             >
-                {succes ? <AiOutlineCheckCircle size={20} /> : "Enviar"}
+                {emailState.loading && (
+                    <div className="animate-spin">
+                        <CgSpinner />
+                    </div>
+                )}
+                {emailState.success && <AiOutlineCheckCircle size={20} />}
+                {emailState.none && "Enviar"}
             </button>
         </form>
     );
