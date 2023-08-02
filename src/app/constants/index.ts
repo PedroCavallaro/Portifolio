@@ -20,7 +20,7 @@ export const projects = [
         imageDesktop: "asdasdd",
         isDeployed: false,
     },
-];
+] as const;
 
 export const experienceArray = [
     {
@@ -37,4 +37,4 @@ export const experienceArray = [
             "Criação de APIs",
         ],
     },
-];
+] as const;

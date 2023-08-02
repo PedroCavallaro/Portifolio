@@ -3,7 +3,7 @@ import { twMerge } from "tailwind-merge";
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
     label: string;
-    erros: string;
+    erros?: string;
 };
 // eslint-disable-next-line react/display-name
 const Input = forwardRef<HTMLInputElement, InputProps>(
@@ -18,12 +18,17 @@ const Input = forwardRef<HTMLInputElement, InputProps>(
                 </label>
                 <input
                     ref={ref}
+                    name={name}
                     className={twMerge(
                         `w-32 h-5 p-1 lg:w-[20rem] lg:h-[2rem] lg:text-md rounded-sm text-black ${className}`
                     )}
                     {...props}
                 />
-                {erros && <span>{erros}</span>}
+                {erros && (
+                    <span className="text-red-500 text-xs lg:text-sm">
+                        {erros}
+                    </span>
+                )}
             </div>
         );
     }

@@ -1,20 +1,54 @@
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 import Input from "../Input";
+import axios from "axios";
 
+const schema = z.object({
+    name: z.string().min(3, "Minimo 3 caractéres"),
+    subject: z.string().min(5, "Minimo 5 caracteres"),
+    text: z.string().min(10, "O texto deve ser maior"),
+});
+
+type FormData = z.infer<typeof schema>;
+
+async function submit({ name, subject, text }: FormData) {
+    await fetch(
+        `http://localhost:3000/api?name=${name}&subject=${subject}&text=${text}`,
+        {
+            method: "GET",
+        }
+    );
+}
 export default function EmailForm() {
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+        reset,
+    } = useForm<FormData>({
+        mode: "onBlur",
+        resolver: zodResolver(schema),
+    });
     return (
-        <form className="flex flex-col gap-2 text-white relative -right-12 shadow bg-zinc-900 px-4 rounded-md mt-4">
+        <form
+            onSubmit={handleSubmit((data) => submit(data))}
+            className="flex flex-col gap-2 text-white relative -right-12 shadow bg-zinc-900 px-4 rounded-md mt-4"
+        >
             <p className="text-xs text-center text-white mt-4  lg:text-lg lg:w-[20rem]">
                 Me mande uma mensagem!
             </p>
             <Input
-                label="Email"
-                erros=""
+                label="Nome"
+                {...register("name")}
+                erros={errors.name?.message}
                 className=""
                 placeholder="email@email.com"
             />
             <Input
+                {...register("subject")}
                 label="Assunto"
-                erros=""
+                erros={errors.subject?.message}
                 placeholder="Sobre este portifólio"
             />
             <div className="w-32 h-32 flex flex-col gap-1">
@@ -22,7 +56,7 @@ export default function EmailForm() {
                     Texto
                 </label>
                 <textarea
-                    name=""
+                    {...register("text")}
                     id=""
                     className="text-black text-xs rounded-sm resize-none lg:w-[20rem] lg:text-md"
                     cols={10}
