@@ -10,14 +10,18 @@ interface ProjectCardProps {
     imageMobile: string;
     imageDestktop: string;
     isDeployed: boolean;
+    shortDesc: string;
+    longDesc: string;
 }
 
 export default function ProjectCard({
-    name,
-    link,
-    imageMobile,
-    imageDestktop,
-    isDeployed,
+    name = "",
+    link = "",
+    imageMobile = "",
+    imageDestktop = "",
+    isDeployed = false,
+    shortDesc = "",
+    longDesc = "",
 }: ProjectCardProps) {
     function handleButtonClick() {
         setIsTextOpen(!isTextOpen);
@@ -44,18 +48,21 @@ export default function ProjectCard({
                     data-isopen={isTextOpen}
                     className="h-full w-full absolute bg-white -bottom-64 data-[isopen=true]:bottom-0 transition-all lg:group-hover:bottom-0"
                 >
-                    <p className="text-black text-xs px-2 mt-2 leading-relaxed select-none block">
-                        Pequno blog criado com Next, React Node
+                    <h2 className="text-black text-xs px-2 mt-2 leading-relaxed select-none">
+                        <p className=" block lg:hidden">{shortDesc}</p>
+                        <p className=" hidden lg:block">{longDesc}</p>
+
                         <br />
+
                         <Link
                             target="_blank"
                             referrerPolicy="no-referrer"
                             href={link}
-                            className="underline hover:text-zinc-900 transition-all"
+                            className="underline hover:text-zinc-900 transition-all relative -top-2 lg:-top-o"
                         >
                             {isDeployed ? "Visitar " : "Ver mais "}
                         </Link>
-                    </p>
+                    </h2>
                 </div>
 
                 <div className="text-black absolute -bottom-0 flex items-center justify-center w-full z-50 lg:hidden ">

@@ -76,7 +76,7 @@ export default function EmailForm() {
                 {...register("name")}
                 erros={errors.name?.message}
                 className=""
-                placeholder="email@email.com"
+                placeholder="Digite seu nome"
             />
             <Input
                 {...register("subject")}
@@ -96,7 +96,7 @@ export default function EmailForm() {
                     rows={5}
                 ></textarea>
                 {errors.text && (
-                    <span className="text-red-500 text-xs lg:text-sm">
+                    <span className="text-red-500 text-xs lg:text-sm lg:w-[10rem] ">
                         {errors.text.message}
                     </span>
                 )}

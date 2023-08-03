@@ -8,15 +8,13 @@ export async function GET(request: NextRequest) {
     const text = searchParams.get("text");
     let hasPassed = false;
 
-    // const message = await transporter.sendMail({
-    //     from: name!,
-    //     to: "pedrocavallaro.contato@gmail.com",
-    //     subject: subject!,
-    //     html: `<p>${text}</p>`,
-    // });
-    // if (message.accepted) {
-    //     hasPassed = true;
-    // }
-    hasPassed = true;
+    const message = await transporter.sendMail({
+        to: "pedrocavallaro.contato@gmail.com",
+        subject: `${name} - ${subject}`,
+        html: `<p>${text}</p>`,
+    });
+    if (message.accepted) {
+        hasPassed = true;
+    }
     return new NextResponse(JSON.stringify({ hasPassed }));
 }

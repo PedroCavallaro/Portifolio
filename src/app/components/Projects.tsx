@@ -12,6 +12,8 @@ export default function Projects() {
                             imageMobile={project.imageMobile}
                             link={project.link}
                             name={project.name}
+                            shortDesc={project.shortDesc}
+                            longDesc={project.longDesc}
                             isDeployed={project.isDeployed}
                             key={index.toString()}
                         />
