@@ -22,12 +22,9 @@ type ResponseItems = {
 export default function EmailForm() {
     async function submit({ name, subject, text }: FormData) {
         dispatch({ type: 0 });
-        await fetch(
-            `https://pedrocavallaro-portifolio.vercel.app/api?name=${name}&subject=${subject}&text=${text}`,
-            {
-                method: "GET",
-            }
-        )
+        await fetch(`/api?name=${name}&subject=${subject}&text=${text}`, {
+            method: "GET",
+        })
             .then((res) => res.json())
             .then((data: ResponseItems) => {
                 if (data.hasPassed) {
