@@ -22,8 +22,12 @@ type ResponseItems = {
 export default function EmailForm() {
     async function submit({ name, subject, text }: FormData) {
         dispatch({ type: 0 });
-        await fetch(`/api?name=${name}&subject=${subject}&text=${text}`, {
-            method: "GET",
+        await fetch(`/api/email`, {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ name, subject, text }),
         })
             .then((res) => res.json())
             .then((data: ResponseItems) => {
