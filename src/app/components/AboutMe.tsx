@@ -14,7 +14,7 @@ export default function AboutMe() {
                         Sou um desenvolvedor web, curioso para novos
                         aprendizados e tecnologias. Atualmente estou no 4
                         semestre de ADS, também atuando como freelancer nas
-                        horas vagas, utilizando principlamento Nextjs, React e
+                        horas vagas, utilizando principlamente Nextjs, React e
                         Node, mas também possuo alguma experiência com Java e
                         PHP.
                     </p>
