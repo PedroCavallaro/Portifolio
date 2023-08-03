@@ -12,11 +12,11 @@ export async function POST(request: NextRequest) {
     const { name, subject, text } = data;
     let hasPassed = false;
 
-    // const message = await transporter.sendMail({
-    //     to: "pedrocavallaro.contato@gmail.com",
-    //     subject: `${name} - ${subject}`,
-    //     html: `<p>${text}</p>`,
-    // });
+    const message = await transporter.sendMail({
+        to: "pedrocavallaro.contato@gmail.com",
+        subject: `${name} - ${subject}`,
+        html: `<p>${text}</p>`,
+    });
     if (message.accepted) {
         hasPassed = true;
     }
