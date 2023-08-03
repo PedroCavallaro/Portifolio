@@ -23,7 +23,7 @@ export default function EmailForm() {
     async function submit({ name, subject, text }: FormData) {
         dispatch({ type: 0 });
         await fetch(
-            `http://localhost:3000/api?name=${name}&subject=${subject}&text=${text}`,
+            `https://pedrocavallaro-portifolio.vercel.app/api?name=${name}&subject=${subject}&text=${text}`,
             {
                 method: "GET",
             }
