@@ -22,7 +22,7 @@ type ResponseItems = {
 export default function EmailForm() {
     async function submit({ name, subject, text }: FormData) {
         dispatch({ type: 0 });
-        await fetch(`/api/email`, {
+        await fetch("https://pedrocavallaro-portifolio.vercel.app/api/email", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
